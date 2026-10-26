@@ -61,9 +61,7 @@ From reading posts in the dental hygiene subreddit, I noticed:
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
-
-emotional support
+### `emotional_support`
 
 **Definition:** Expresses distress or seeks reassurance, validation, or shared experiences, without requesting a concrete solution.
 
@@ -91,11 +89,9 @@ I went back today because one of my teeth was really sensitive, and I now have a
 
 That’s all, I’m just overall very embarrassed and frustrated :,) are cavities normal even if you do everything right? I don’t know if I even did anything wrong or not
 
-### `label_two`
+### `practical_advice`
 
-practical_help
-
-**Definition:** - Requests information, recommendations, or actions to solve a problem or make a decision.
+**Definition:** Requests information, recommendations, or actions to solve a problem or make a decision.
 
 **Example 1:**
 
@@ -107,12 +103,12 @@ I’m only at 32 hours average, and it’s been mentally hard to do 40 (burn out
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `emotional_support` and `practical_advice`.
 
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-     If a post requests concrete information or an action to take, label it practical_help, even if it also expresses distress. If it mainly seeks understanding, reassurance, or solidarity, label it emotional_support.
+     If a post requests concrete information or an action to take, label it practical_advice, even if it also expresses distress. If it mainly seeks understanding, reassurance, or solidarity, label it emotional_support.
 
 
 
@@ -120,48 +116,55 @@ I’m only at 32 hours average, and it’s been mentally hard to do 40 (burn out
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+**Where the posts came from:** Public posts from [r/DentalHygiene](https://www.reddit.com/r/DentalHygiene/), manually copied into chat and formatted into `labels.csv`. The dataset is one unsplit file; the notebook will make the training/validation/test split.
 
-**Where the posts came from:**
+**Collection limit:** I stopped collecting because I was running out of time. I currently have 104 posts, below both the normal 200-post requirement and the 150-post stop-rule minimum. This is an incomplete collection milestone, not fulfillment of the stop rule. A smaller dataset will also make held-out scores less stable.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** I supplied the early labels myself, and AI entered them and formatted the CSV. There are 61 rows recorded as `cold`; this records my own label choices, but I still need to verify that at least 20 were assigned independently before any AI labeling help. Later, I asked AI to pre-label posts using my definitions. The remaining 43 rows are marked `AI pre-labeled; needs human review`. I have not yet recorded completion of that review. Two rows have rejoined passages that also need checking against the original posts.
 
 **Counts per label:**
 
 | Label | Count | Share |
-|---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+|---|---:|---:|
+| `emotional_support` | 54 | 51.9% |
+| `practical_advice` | 50 | 48.1% |
+| **Total** | **104** | **100%** |
 
-**Three hard cases**
+Neither label exceeds 70%. Exact duplicate text, empty text, blank labels, label spelling, and CSV structure were checked. One near duplicate differing only in its first letter was removed, keeping the user-labeled version. Complete source text still needs verification for uncertain excerpts; `incomplete_posts.txt` holds excluded fragments and a possible alternate version.
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
+**Three hard cases — AI-drafted for my review**
 
-**1.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
+These are proposed boundary analyses, not claims that I have independently reviewed or accepted the reasoning.
 
-**2.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
+**1. Distress plus a specific request for help flossing**
 
-**3.**
-> *The post:*
+> *Post excerpt:* “I’m panicking. I don’t want to lose my teeth. (I have gingivitis.)” ... “Gonna do some research and see what’s out there but if anyone has advice, please share 🥲”
 >
-> *Could have been:*
+> *Could have been:* `emotional_support` or `practical_advice`.
 >
-> *I chose, because:*
+> *Current AI label and reasoning:* `practical_advice`. The author expresses anxiety but also describes difficulty using floss and explicitly asks for advice. The concrete request takes priority under the decision rule.
+>
+> *My review:* Pending.
+
+**2. Anxiety about brushing, without a specific request for a technique**
+
+> *Post:* “I have a very bad habit of passing out at night and then brushing my teeth in the morning.How worried should I be? I dont have gingivitis thankfully no gum bleeding. I am a lot better than I was but I still do these stupid things. Thanks for letting me ask and vent.”
+>
+> *Could have been:* `emotional_support` or `practical_advice`.
+>
+> *Current AI label and reasoning:* `emotional_support`. The main request appears to be reassurance about worry rather than a concrete change to the routine. Review whether “How worried should I be?” should instead count as a request for factual risk information, and clarify the rule consistently.
+>
+> *My review:* Pending.
+
+**3. Burnout with a practical question at the end**
+
+> *Post excerpt:* “This week has been hell on earth!” ... “If you are a hygienist and find time to go to your gym after work even if it’s crowded, and come home and cook real food, I applaud you. How do you do it.”
+>
+> *Could have been:* `emotional_support` or `practical_advice`.
+>
+> *Current AI label and reasoning:* `practical_advice`. Most of the post vents, but the final question can be read as asking for concrete strategies to manage work, exercise, and meals. Review whether it is a literal request or a rhetorical expression of exhaustion.
+>
+> *My review:* Pending.
 
 ---
 
@@ -194,17 +197,17 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Eight borderline dental-hygiene posts to stress-test my labels.
+- *What came back:* Fictional examples mixing frustration, reassurance, factual questions, and requests for solutions.
+- *What I changed:* I shifted from venting versus advice requests to emotional support versus practical advice, and wrote a rule prioritizing concrete requests over emotional tone. The fictional posts were not added to the dataset.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* CSV formatting for copied Reddit posts, followed by pre-labeling later batches.
+- *What came back:* A CSV with my early label choices entered and later AI label suggestions explicitly marked for review. AI also drafted three boundary analyses above.
+- *What I changed:* I standardized the label names to `emotional_support` and `practical_advice`. Review and correction of all AI suggestions is still pending.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** AI helped format and separate pasted posts, entered labels I supplied, and pre-labeled later posts. There are currently 43 AI-pre-labeled rows awaiting human review. AI also rejoined two interleaved posts; those reconstructions require verification against the originals. I have not claimed these rows are reviewed or that the three AI-drafted hard-case analyses are my final judgments.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
