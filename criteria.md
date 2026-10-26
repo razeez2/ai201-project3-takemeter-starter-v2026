@@ -67,7 +67,7 @@ I think the dataset is pretty clear cut but there may still be ambiguity.
 
 <!-- Your criterion. -->
 
-The precision for practical_help is atleast 0.8 and the precision for emotional_support is atleast 0.6.
+The precision for practical_advice is atleast 0.8 and the precision for emotional_support is atleast 0.6.
 
 **Why this target:**
 
@@ -79,7 +79,7 @@ There is simply more posts on practical help which means they is a higher likeli
 
 <!-- Your criterion. -->
 
-of 200 posts, about 120 are labelled "practical_help".
+of 200 posts, about 120 are labelled "practical_advice".
 
 **Why this target:**
 
@@ -104,7 +104,7 @@ labels should be consistent
 ## 5.
 
 <!-- Your criterion. -->
-For held-out dental hygiene posts where the model is at least 80% confident in predicting emotional_support or practical_help, at least 85% of those predictions must be correct.
+For held-out dental hygiene posts where the model is at least 80% confident in predicting emotional_support or practical_advice, at least 85% of those predictions must be correct.
 
 
 **Why this target:**
