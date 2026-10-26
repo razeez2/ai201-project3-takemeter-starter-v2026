@@ -42,6 +42,13 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+### Candidate distinctions
+
+From reading posts in the dental hygiene subreddit, I noticed:
+
+1. some posts are about personal experiences, some aren't.
+2. most posts involve some need for help.
+3. some posts have pictures associated with them.
 
 
 ---
