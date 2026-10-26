@@ -63,23 +63,47 @@ From reading posts in the dental hygiene subreddit, I noticed:
 
 ### `label_one`
 
-**Definition:**
+emotional support
+
+**Definition:** Expresses distress or seeks reassurance, validation, or shared experiences, without requesting a concrete solution.
 
 **Example 1:**
->
+>Had a Karen patient today. I called her back and she was immediately disappointed and agitated that I wasn’t her “usual” hygienist, even though there was no alert in her chart that she typically sees the same one. I explained that the hygienist she sees no longer works at the office and she said she wished someone had told her beforehand (fair).
+
+I bring her back to my room, she needs nitrous so I go and get the tanks. The majority of the time I don’t use nitrous, but I know the basics of the tanks so I’m trying to get her situated. I didn’t realize there was a knob to move the oxygen so I had one of the assistants help me. She started being snippy with the assistant after the assistant told her to breath deeply through her nose, she said, “Where else would I breathe?”
+
+I get her started, I numb her teeth with Gingicaine because that’s what she wanted too. She was on a 3-4 MRC but her last visit was 6 months ago, so pocket depths were 4-6 mm localized in her back teeth. I explained my findings to her and she was saying how she typically comes in every 3-4 months but we had her down for 6 months. I told her that we typically make the next appointment after their last one.
+
+I started with hand scaling and then switched to the Cavitron at the end to remove the rest of the stain and tartar. I had the Cavitron at the lowest setting and she was still jumping and fidgeting so I stopped. When I was done, I sat her up and put her on 100% oxygen, and told her I was going to grab the doctor. She told me she wanted to skip the exam, she apparently had another appointment to go to. I walk her up front, she leaves. When I had a spare moment, I went up to the assistant and she told me that the patient called and complained about me.
+
+She said that was the, “worst cleaning she’s ever had”, and she was accusing me of “not using the ultrasonic” and that I must be a “new grad” because I didn’t know how to use nitrous. The assistant flat out said I have been a hygienist for years and that I wasn’t a new grad. The patient said that she wasn’t going to come back and leave a bad review, which she did and I read. She didn’t use my name (thank gosh), but my gosh. I did everything I could, I tried to make her comfortable, get her cleaning done, and be kind as well but none of that mattered because to her I’m just a stupid fuck up.
+
+I’m three years in. I don’t know how much longer I can take this, but there’s little to no career options outside of hygiene. I’m tempted to go back to school and start from scratch.
 
 **Example 2:**
->
+>I think I just need somewhere to rant, I’m really frustrated, embarrassed, and disappointed in myself :(
+
+I’m 19, and my parents never really took me to the dentist as a kid. I finally went myself and, of course, I had a ton of cavities, some pretty bad. It took them 1-2 months to get me in, but in April, I got all my cavities filled. There were about 4-5 across my front teeth. I also got deep cleanings, and now I’m getting cleanings every 4 weeks.
+
+I didn’t have great dental habits before I started going to my dentist—I only brushed in the morning and I didn’t floss. Now, I’m brushing 2x a day (prescription toothpaste at night and flossing at night.)
+
+I went back today because one of my teeth was really sensitive, and I now have another cavity. The dentist said it was pretty small, but to just get it filled to get over with (because she knows I’m an overthinker and would freak out over it.) Regardless, I’m really upset. I thought I was doing super good with my dental hygiene and I was super proud of myself, and I really really really hated getting numbed for the filling before. But now I have to go get numbed again, I’m really upset.
+
+That’s all, I’m just overall very embarrassed and frustrated :,) are cavities normal even if you do everything right? I don’t know if I even did anything wrong or not
 
 ### `label_two`
 
-**Definition:**
+practical_help
+
+**Definition:** - Requests information, recommendations, or actions to solve a problem or make a decision.
 
 **Example 1:**
->
+
+>I was diagnosed with periodontal disease summer of 2025, my hygienist did the pocket depth charting and for a week after I had the most painful inflamed gums. Which was strange bc even though I had poor oral health I had never had that much pain in my gums before. At the time I thought it was just because of the gum disease point blank period. Then came the two sessions of deep cleaning and Arestin and everything went back to normal, no more swelling/ pain. Ever since then I’ve flossed/ brushed/ used a water pik every day. I’ve been to every single 3month cleaning since then and my most recent one was on Wednesday. The hygienist complemented me on my improved oral health, said everything looked great, said my gums looked healthy. Then as I was about to leave she asked to do a pocket depth charting to see if the numbers had improved. She said a good amount of them had and overall there was improvement. Not even an hour after the appointment my gums started to swell and it’s been 3 days and they haven’t improved in the slightest. They are super inflamed and painful and I’m just so confused on what could have caused this? It seemingly all stems from the pocket charting, like could she have disturbed bacteria and just reignited the infection? Will I have to go through with the very expensive deep cleaning again? Im very worried because it’s the weekend and no dentists are open and my gums are so swollen that I’m starting to see recession. Very confused and would love any input. Thank you
 
 **Example 2:**
->
+>How many hours do you guys work a week?
+I’m only at 32 hours average, and it’s been mentally hard to do 40 (burn out).
 
 ### The hardest boundary
 
@@ -88,6 +112,7 @@ From reading posts in the dental hygiene subreddit, I noticed:
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
+     If a post requests concrete information or an action to take, label it practical_help, even if it also expresses distress. If it mainly seeks understanding, reassurance, or solidarity, label it emotional_support.
 
 
 
