@@ -39,8 +39,7 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+TakeMeter classifies text posts from the public r/DentalHygiene community as `emotional_support` or `practical_advice`. Emotional-support posts express distress or seek reassurance, validation, or solidarity, while practical-advice posts request concrete information, recommendations, or actions. When a post does both, the decision rule prioritizes a concrete request for help over its emotional tone. This initial version was trained on 104 collected posts; its small dataset and pending human review of AI labels limit how much the results can establish.
 
 ### Candidate distinctions
 
