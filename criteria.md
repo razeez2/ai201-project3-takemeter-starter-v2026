@@ -54,12 +54,12 @@ whether you hit them:
 ## 1.
 
 <!-- Your criterion. It must name a number. -->
-
+accuracy is atleast 0.7.
 
 
 **Why this target:**
 
-
+I think the dataset is pretty clear cut but there may still be ambiguity.
 
 ---
 
@@ -67,11 +67,11 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
-
+The precision for practical_help is atleast 0.8 and the precision for emotional_support is atleast 0.6.
 
 **Why this target:**
 
-
+There is simply more posts on practical help which means they is a higher likeliness of high precision for it.
 
 ---
 
@@ -79,21 +79,23 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
-
+of 200 posts, about 120 are labelled "practical_help".
 
 **Why this target:**
 
 
-
+more posts 
 ---
 
 ## 4.
 
 <!-- Your criterion. -->
 
-
+out of 10 posts, me and AI agree on 9/10 of them
 
 **Why this target:**
+
+labels should be consistent
 
 
 
@@ -102,12 +104,12 @@ whether you hit them:
 ## 5.
 
 <!-- Your criterion. -->
-
+For held-out dental hygiene posts where the model is at least 80% confident in predicting emotional_support or practical_help, at least 85% of those predictions must be correct.
 
 
 **Why this target:**
 
-
+Posts can express distress while also asking for practical advice. I want high-confidence predictions to reliably distinguish these overlapping cases.
 
 ---
 
