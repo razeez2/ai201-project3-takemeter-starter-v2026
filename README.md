@@ -170,19 +170,25 @@ These are proposed boundary analyses, not claims that I have independently revie
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Base model:** `distilbert-base-uncased`.
 
-**Base model:**
+**Environment and device:** Ran sections 1–5 of `takemeter.ipynb` using this project's `.venv/bin/python`. The notebook cells were executed sequentially by a local runner, with outputs saved back into the notebook. `results.json` records `mps`, Apple Silicon GPU (MPS), with PyTorch 2.14.1. Hardware can affect results even when the seed is unchanged.
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate `2e-5`, batch size 16, maximum length 128 tokens, seed 42.
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Only the label map was changed to `emotional_support` and `practical_advice`. Training hyperparameters stayed at their defaults. Whole posts remain in the CSV, but the model reads at most 128 tokens per post; later requests in long posts can be truncated.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** Stratified 70/15/15 splitting produced 72 training posts, 16 validation posts, and 16 held-out test posts.
 
+| Label | Train | Validation | Test |
+|---|---:|---:|---:|
+| `emotional_support` | 38 | 8 | 8 |
+| `practical_advice` | 34 | 8 | 8 |
+| **Total** | **72** | **16** | **16** |
 
+Each label has only 8 test examples, so scores may change substantially across seeds. The dataset check found no `[FIX ME]` issues but warned that 104 posts is below the submission minimum. Unreviewed AI labels and uncertain source excerpts remain limitations of this preliminary run.
+
+**Run status:** Training and held-out evaluation completed. `results.json` and `test_split.csv` were generated. Sections 6–7 were not run, and interpretation against the criteria is deferred to unit 6. The initial sandbox attempt could not access Hugging Face; the successful retry used network access and detected the MPS GPU.
 
 ---
 
