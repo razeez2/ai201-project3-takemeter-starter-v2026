@@ -1,0 +1,203 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 35,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 35,
+    "accuracy": 0.6571428571428571,
+    "f1_macro": 0.6428571428571428,
+    "per_label": {
+      "emotional_support": {
+        "precision": 0.6,
+        "recall": 0.8823529411764706,
+        "f1": 0.7142857142857143,
+        "support": 17
+      },
+      "practical_advice": {
+        "precision": 0.8,
+        "recall": 0.4444444444444444,
+        "f1": 0.5714285714285714,
+        "support": 18
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "work for a general dentist who is in the top 1% of Invisalign providers in North America. I had a comp/fmx on my schedule but I noticed pt had a pano already taken before ortho 6 months ago. You could CLEARLY see radiographic bone loss and calc on the pano along with obvious intra oral evidence of periodontitis. So the pt has completed Invisalign, never had SRP, and is now in my chair asking me why Dr didn\u2019t tell her she had perio 6 months ago\u2026\nWHY are we moving teeth when there is active infection present??? I\u2019m not talking mild perio either. Gen horizontal BL, loc vertical BL, heavy Supra and sub calc, erythematous, bulbous tissue\u2026 & this isn\u2019t the first pt like this in our office. We\u2019re pumping out ortho",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I\u2019ve got send sensitive teeth, grooves digging in my teeth in some areas and gum receding in some areas.\n\nDentist recommended soft brush but I used sensodyne extra soft brushes all my life.\n\nLooking at an electric brush. Which would suit my needs ?\n\nThanks",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "I've been working as a hygienist for a while, but I'm at a new office (in a new country) and suddenly I am having clients who are so sensitive, that days/weeks after an SRP they are having terrible pain.\n\nI feel frustrated because I live in a city/jurisdiction that doesn't allow me to administer my own LA, and so even my SRPs are more difficult sometimes because trying to get some patients numb eats up so much of my work time (needing to call doctors in again and again to add more).\n\nI'm wondering what am I missing with the awful pain/post-op sensitivity? Or do I just happen to be running into a more sensitive group of clients?",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Back in March, I quit a dental office and they acted totally psychotic over it. They attempted to bully me into signing a 12 point contract in which I would owe them $5,000 per violation. The violations included \u201cspreading misinformation\u201d which could have easily been whatever they felt like claiming I said.\\\nThe office manager said I needed to sign it for them to process pay roll. Which is illegal. So I refused to sign it and left. I had contacted another former employee who told me they withheld her pay until she returned her scrubs which is also illegal. No matter what you cannot ransom wages earned according to the Department of Labor.\nNow to present day I receive a bill for my husband\u2019s dental cleaning that I did while I worked there. The cleaning was at no charge since I was employed there. Part of the employee perks since we don\u2019t get medical or dental insurance. I did this cleaning back in early February while I was employed. Now they send me a bill for it with services dated for today? I\u2019m just so irritated bc I worked my ass off there and I was nice to everybody and they are so petty for trying to do this. It\u2019s also fraud. They dated it for today. Like are they trying to go back on a previous write off??",
+      "gold": "emotional_support",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Any feedback on Dentsply Cavitron Jet Gen-132?",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Not sure if this is the best place to post, if you have recommendations of another subreddit to share this in for more feedback, please let me know.\nLadies, gentleman, anyone - where are we getting affordable, cotton blend, just regular ass scrubs from?! I can\u2019t do the polyester BS, and while I don\u2019t want them to be the shape of a cardboard box, I also don\u2019t need them to look like trendy workout wear. Where is the middle ground?! I\u2019m also sick of the joggers. I just want breathable, sturdy, scrubs that fit well, without costing an arm and a leg. Preferably if they come in a set!\nI\u2019m 5\u20192\u201d (I don\u2019t wear petite pants because all my height is in my legs) and about 118 lbs.\nAny tips are so very much appreciated",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I just started less than a month ago at a new office, fresh out of hygiene school. One of the doctors keeps giving me \u201cfeedback\u201d after every cleaning when they do their exam. They check every tooth with the ODU for calculus and plaque. I feel like I\u2019m still in school. I\u2019ve never once left calculus but they claim they keep finding plaque after I Cavitron, scale and polish. I\u2019m still working on my time management, so it\u2019s stressing me out because it seems like this doctor wants everything to be absolutely perfect and sometimes I just don\u2019t have enough time. One patient had incredibly tenacious stain on the linguals and I tried my best to get it off but I just couldn\u2019t. The doctor made me go back and get the stain when I was already running behind and called me out in front of the patient. I\u2019m new to this office so I don\u2019t want to ruffle any feathers but this just seems a bit much. Has this happened to anyone? How did you deal with it?",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I gave my boss notice today and am now feeling a wave of guilt. It\u2019s a private practice with 1 dentist and 2 other hygienists, I\u2019ve been working there for 5 years. Overall it\u2019s been a good experience but I am limited by the doctor. We aren\u2019t allowed to do sealants, fluoride varnish, or whitening. We\u2019re strictly hygiene. There is a moderate level of micromanagement and moodiness from the dds. I love my coworkers but the OM is unbearable(in ways that would warrant a whole separate post).\nWhen I told him I was leaving today he tried to convince me to stay and definitely tried to make me feel guilty over some things like it\u2019s not fair to the patients, and that he had made xyz accommodations for me etc.\nI do feel sad to leave, but he made it worse by not just accepting my resignation. I know he just wants me to stay, but I\u2019ve hung on for too long now and i cannot stay.\nSomeone please tell me it gets easier \ud83e\udee0",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I have a small dot on two of my lower molars. At first I thought it was just something that got stuck on my teeth, and when I saw it again it was still there. I actually didn't pay any attention to it, since I didn't know what it was, and cavities aren't supposed to look like that. I ignored it for a month. And I saw another tooth with a similar dot in brown color. That concerned me.\n\nI started researching about what it was. And I immediately panicked and started thinking those are cavities. I was actually dealing with a tough situation, so I couldn't go to the hospital. So I tried what I could, at home, brushing twice and rinsing my mouth with salt water. And stopped consuming sugar. Rinsing my mouth after eating anything. For a month. And the newly formed dot vanished.\n\nSince the dot vanished, my fear vanished along with it too. So, I thought as long as I brush and take my dental hygiene seriously, it's gonna get better. So, I allowed myself to enjoy some sweet treats. And the dot came back. That made me panic all over again.\n\nNow I got all these: Sensodyne Deep Clean toothbrush, Sensodyne Pronamel toothpaste, and Sensodyne Complete Protection mouthwash. So I can take care of it... but I'm scared. Will it get better? Or would I end up ruining my teeth? Because I've been seeing videos and seeing people's comments online... everyone says a lot of different things that contradicts each other. And I'm unsure which one to believe.",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I hadn\u2019t been to the dentist in over 8 years at least (not a proud moment). Had bad cleaning habits, very sporadic with brushing and flossing. Was concerned about what appeared to be some gum loss near the front bottom teeth and decided to bite the bullet and see the damage and get a game plan together moving forward and get better habits. Deep cleaning needed and 6 cavities. Turns out it was build up on my gums. Almost every measurement was a 5 for my gums.\nGot half of the deep cleaning done about two weeks ago and went back yesterday for my other half. They said my side I already had cleaned was looking really good! Almost every gum was a 3 now! I have been flossing with expanding floss twice a day, brushing twice a day with parodontax Active Gum Repair, and rinsing with parodontax Active Gum Health mouthwash twice a day.\nAll that to say I really love taking care of my mouth now and am ready to be back to normal cleanings and get good reports. I love looking at my gums now. Now just 3 cavities left to fill on Friday! I had never heard of parodontax until this sub and I\u2019m grateful!",
+      "gold": "emotional_support",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Hey all I dont know if it's just my dental office but they all seem so annoyed all the time with me when I ask questions about oral health. They all seem like they want to get me finished as fast as possible. I was wondering what type of toothpaste or what should be done to be able to whiten my teeth more. I have pretty okay oral practice I brush my teeth everyday and floss every night. But my teeth are still a bit yellow not a crazy amount yellow but i know they can be whiter. And I asked my Dr what can I do about it and they kind of signed at me and said to brush more often or I should take up there teeth whitening services. But I brush twice a day idk how much more I can brush. I haven't had cavities since I was younger. Now everytime I go they say my teeth are good and I should floss more which I agree as I stated I only floss at night. Please help I dont really want to do whitening services it's pretty expensive. If it's my only option I'll do it but I just want to hear other opinions before I cough up money for the services.",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "How do you all deal with patients that complain about the \"scraping\" with the hand scaling? Like, it's something I HAVE to do cause some areas just don't get a good clean with the ultrasonic (which I always start with anyways and then fine tune by hand). Its just so annoying having patients bitch about it and I'm wondering what I can say to patients to make them chill about it. Like I do my best with the ultrasonic but sometimes I need it for certain areas especially interprox. I get that it sucks but we literally have no choice \ud83e\udee0",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "If a person were to put on 5% hydrogen peroxide strips overnight what would happen? Would the teeth get much whiter but also a lot of sensitivity? Or is it so that these strips only work over time and how can i whiten my teeth the fastest?",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Hello,\n\nI usually use regular floss. However, I'm using invisalign right now, so I'm flossing at least three times a day, including when I'm not home. I need to use picks in situations where I don't have opportunities to wash my hands. However, I have a really small mouth and tightly packed teeth (hence the invisalign).\n\nCan anybody recommend a pick brand that would fit in a small mouth without digging into the cheeks and gums? I tried interdental brushes and they sucked. I would also be open to those silicon/rubber picks, but I don't know if they would fit between my teeth.",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "How many hours do you guys work a week?I\u2019m only at 32 hours average, and it\u2019s been mentally hard to do 40 (burn out).",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I temp full time, and I'm getting really tired of this pattern: an office will post an 8-hour shift (like 7-4, 8-5, or 9-6), confirm me, and then text the night before saying the first few patients canceled or the end of the day fell apart, so now they want me to come in later or leave early. It throws off my entire schedule and affects my income. At this point, I just cancel. I'll text them that l'm no longer available since I had committed to a full shift, and I'll ask if they still want to try to fill it. Most of the time, they say no and claim they were \"just giving me a heads up.\" That kind of response feels manipulative like they're trying to shift the responsibility onto me instead of being honest that they no longer want to pay for a full day temp. Then suddenly I'm the unprofessional one, and they say they'll never book me again. Honestly, it's not right. I show up for what I commit to, and I expect the same respect in return. Is this happening to anyone else? The amount of disrespect I get from some offices is wild being told I\u2019m \u201cunprofessional\u201d for canceling, when in reality, cancellations happen on both sides. I\u2019ve had offices cancel on me last minute, and I adjust without calling them unprofessional. No other job would tell someone not to show up again just because of one cancellation. It\u2019s a two-way street schedules can be filled, and respect should go both ways.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Hi I\u2019m 15 and I just went to the dentist today (4/24/25) for the first time since December of 2021 and guess what?\n\nAre you ready?\n\nOkay\u2026\n\n4 root canals on my back 4 teeth because of cavities, baby cavity\u2019s on all of my canines, and, to top it all off, all 4 wisdom teeth need to be removed.\n\nEdit: okay maybe I want to rephrase what I said about my canines, they are not \u201cbaby cavities\u201d they are more or less almost cavities that haven\u2019t showed up on the scan yet, but could be cavities. Also my dentist has put in a prescription tooth paste for me.\n\nFuck me aye? Idek what I\u2019m looking for posting this honestly. How to prepare? Help with a home care routine? Support? For someone to be worse than me? I don\u2019t fucking know, I just know I\u2019m embarrassed as hell.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "So a little background, i\u2019ve never had a cavity. Never any issues with my teeth, my gums are fine not puffy\u2026 they told me in november i had periodontal disease and my teeth were gonna fall out.. So i get this $3000 cleaning\u2026 notice no difference. A month later i went to the ortho because i got braces on and they said i had NO SIGNS of ever having any peridontal disease???\n\nMy husband, has had a history of having cavities due to genetics but again, has no issues with his gums. (mind you we are BOTH in our early 20\u2019s and have had regular cleanings out entire life) went to get 2 cavities looked at, they again told him he had peridontal disease and he needed this $3000 cleaning. we realized this was a scam and decided to not get it.\n\nA couple months later we remembered he needed those cavities out, so yesterday i called and tried to make him an appointment.. no joke they told me \u201cwe won\u2019t do any work on him until he has those appointments, his gums are going to make his teeth all fall out\u201d So you\u2019re telling me.. YOU WONT REMOVE CAVITIES???? WHAT??? i\u2019ve NEVER heard of that EVER. especially because\u2026 he doesn\u2019t have peridontal disease.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Just hear to vent. I\u2019m lowkey freaking out. The past 8 months or so I\u2019ve been trying to get my health back together after a major depressive episode that lasted 2-3 years. I say \u201c-\u201c because it\u2019s honestly such a blur from my excessive sleeping. During that time period I was barely brushing my teeth at all. Not because I didn\u2019t want to, but I just couldn\u2019t physically or mentally gather the strength due to my ocd. Anyways, these past 8 months I\u2019ve brushed my teeth more than I did in those few years combined, but I still don\u2019t usually get in more than one brushing, and I stopped flossing for whatever reason. And I\u2019m scared to lose my teeth. I tried to get back on my flossing game tonight and it was so hard to floss some areas that my floss shredded basically. And my next appointment is like a little over a month away. And they are completely booked. I hope they have an opening soon because I desperately want a cleaning and to start fresh. I am slightly nervous of bad news though. But I guess all I can do is make the best of my situation and floss the best I can \ud83d\ude2d I also hope my hygienist doesn\u2019t think I\u2019m stupid or don\u2019t care, because I do. Anyways, here to new beginnings. I can do this. I just need to stop overthinking it. Cheering on anyone else who is struggling with their mental health. ( Thank you, if you made it this far. Sorry, if I was all over the place. )",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "A new to me patient left a bad review that I made her bleed by going under the gum. She was sensitive after.\n15 years ago, I would have lost sleep over it. Why was I not nicer, did I really hurt her, oh no, I\u2019m going to get fired, a patient didn\u2019t like me!\nNow? I shrug it off. That\u2019s what happens when you go 2 years between hygiene appointments, ma\u2019am.\nIt gets better new hygienists! I have loads of patients that love me, but you just can\u2019t please them all.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I didn\u2019t realize my license had been expired and I worked 2 1/2 days with an expired license. The emails got barried in my email due to all my junk mail and never saw it til after I worked. This is the first time I\u2019ve renewed my license before so I assumed my license expired in November because that is when I started my job two years ago. I should have never assumed\u2026 I also thought that was when my CE credits were due so I ended up finishing them the same day I renewed my license. How screwed am I? I got an email from the board and I had to send in copies of my appointment books and informed them I did work.\nHow screwed am I!?!",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "DH1 here. We were in clinic this afternoon. One of the Dr that helps out asked \u201cwhy would we even want to be hygienist? And 85k isn\u2019t enough to raise kids.\u201d\nWords of encouragement would be appreciated",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I gave into a self harm impulse and scratched at my lower gums with my toothbrush a little too hard because I apparently broke the skin and am now bleeding. Is this something that will fix itself on its own or did I just f*ck myself and need to seek professional help ?\n\nIn case this is something that heals on its own how long do I need to stop smoking cigarettes for to make sure I don't cause an infection ? (Please don't talk about the general long term risks of smoking, I am aware, and it's not relevant)",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Dental hygiene school took the absolute life out of me. I graduated two years ago and I feel like I\u2019m still stuck in the same place. I\u2019ve already taken the boards three times and failed. Nobody talks about how expensive this entire process is, or how mentally draining it becomes. How do people keep paying for these exams over and over? I\u2019m burned out, exhausted, and honestly heartbroken.\n\nI studied for months \u2014 four straight months \u2014 just to walk out with a 74. One point away. It feels like everything I\u2019ve worked for just slips through my fingers every time. I\u2019m tired of pretending I\u2019m okay when this whole process has messed with my confidence and my mental health.\n\nWhy is it so difficult to pass a test just to be licensed? Why isn\u2019t there more support? I\u2019m tired of feeling like I\u2019m not enough when I know how hard I\u2019ve worked. I\u2019m drained, depressed, and honestly just trying to figure out how to keep going.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "16.5 years in this profession and I still feel bad calling in sick! I don\u2019t even know these people! I picked it up through a temp agency I use. I debated waiting until tomorrow to see how I feel, but the chills just kicked in. Ugh. I just feel bad. Those 9 patients want that second cleaning before the end of the year.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "they used the airflow and when i got home i could see 3 small chips, 1 is quite obvious on the front tooth at the gumline\n\nthis composite is only a few months old and cost a lot of money, though it was done at a private london clinic and this routine clean was done at my local dentist\n\nwhat should i do?",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "What is even going on with toothpaste anymore?\n\nFluoride isn't good?\n\nNano Hydroxyapatite is coming out of nowhere?\n\nTeeth whitening things are working but ruin your enamel?\n\nI just want a good toothpaste that can help prevent cavities, is good at breaking down plaque buildup, and can maybe help me make my teeth less sensitive and more white. Is that really so much to ask for nowadays?",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Hi everyone! I\u2019m planning to apply to GSU\u2019s Dental Hygiene Program for Fall 2027. Based on the admission scoring sheet, my estimated score is around 28\u201329 out of 32.5.\\\nMost of my prerequisite grades are A\u2019s, but I might end up with one C in Microbiology Lab. I\u2019m honestly feeling really stressed and discouraged because I\u2019ve heard that even one C can make it difficult to get accepted into a competitive program.\\\nHas anyone been accepted with a score around 28\u201329 or with a C in one of their science labs? I\u2019m also wondering if anyone has experience with the alternate list.\\\nI\u2019m feeling pretty overwhelmed right now and would really appreciate any honest advice or personal experiences. Thank you!",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Hi everyone \u2014 I\u2019m researching how dental practices manage day-to-day operations and where current software still creates friction for dentists and staff.\nI\u2019m especially interested in learning about real workflows, pain points, and what still feels more manual or cumbersome than it should be. I\u2019m not selling anything \u2014 just trying to learn from people working in the field.\nIf you\u2019re open to a quick 15\u201320 minute chat, please comment here or DM me. I\u2019d really appreciate it.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "I\u2019m currently doing my ucas application and I\u2019m doing btec applied science level three extended diploma. is it possible to get into dental hygiene and therapy directly with applied science?\n\nis there anyone that has done this? I\u2019m rlly unsure of whether I should apply for it because competition is high and the cohorts are really small so acceptance rates would be low (I\u2019m also considering radiography instead).",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Hello,\n\nI saw a job posting of a place that's literally so close to me(walking distance), good reviews, and the pay is really good. Much higher than what I was previously being paid and higher than the norm in my area. However, upon seeing the hours I see why.\n\nThey're asking for 25 hours a week, but over the span of 3 days.\n\n2 weeks days that are 11 hours and one weekend that is 6 hours.\n\nI've worked 8 hours shifts max, and being in the dental field I'm usually 30 min earlier and at least 30 min later too, so really end up working more than the hours told by at least an hour.\n\nHere's my main issue. I have had back problems since starting dental hygiene (I know, what else is new). Even when I get loupes I still have back issues where I have to do chiro, physio and exercise on a daily basis or else I'll suffer.\n\nSo I wanted to ask, how bad is 11 hours, anyone who does it do you have any tips and tricks on how to save your neck and back? I love that I don't have to work every single day of the week and get nearly the same amount as if I have worked 5 days a week.\n\nI don't love that the weekend day is basically taken up, but again the pay is really good that I'm willing to sway.\n\nThoughts? Opinions? Help.",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Hey guys so I\u2019ve really stepped up my oral care lately and I just can\u2019t seem to get under some of my gums. Some teeth I can feel it slide under the gum and others I can\u2019t feel it go under the gum just to the gum line. Is that normal to not be able to get under the gums? I went to the dentist for the first time in a long time a week ago and they told me I have gingivitis so I\u2019m really trying to step up my game and prevent any further problems. Thanks for the help!",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "Hello!\n\nChristmas is in 100 days so I've been thinking of what I could crochet as a useful gift for my coworkers. For the girls I thought of scrunchies but for the guys I have no clue\ud83d\ude05, there's 2 Hygienists and 2 Dentists left\ud83e\udd14\n\nWhat would you like to receive?",
+      "gold": "practical_advice",
+      "predicted": "emotional_support"
+    },
+    {
+      "text": "After mouth wash i dont rinse with water and it salivates. Help",
+      "gold": "practical_advice",
+      "predicted": "practical_advice"
+    },
+    {
+      "text": "Im 15 and I\u2019ve had like 5+ cavities.. Like the dentist already took care of it over the years but idk if I have MORE..\nI\u2019m so scared cuz I lowk feel like this dentist is gonna judge me cuz I always have cavities \ud83d\ude14 He looks kinda mean\nAnd a dental hygienist that works at my dentist is MY AUNT So it\u2019s really embarrassing \ud83d\ude1e and I can\u2019t switch dentists cuz that\u2019s up to my mom\nI try to brush my teeth and now I floss but i don\u2019t think I\u2019m doing it right cuz I still feel like I have cavities \ud83d\ude14\ud83d\ude14\nI\u2019m so scared for my next appointment.. he\u2019s gonna see me and realize I got cavities again \ud83d\ude15\nIs there any way I can prevent cavities? I know I should work on my diet and brush my teeth better but what else can I do?\nYk what\u2019s funny tho? \ud83d\ude06 I want to be a dental hygienist in the future \ud83d\ude02.",
+      "gold": "emotional_support",
+      "predicted": "emotional_support"
+    }
+  ]
+}
