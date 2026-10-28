@@ -1,0 +1,134 @@
+[
+  {
+    "phase": "before",
+    "seed": 42,
+    "max_length": 128,
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "matches_original_discrete_metrics": true,
+    "accuracy": 0.6857142857142857,
+    "confidence": {
+      "threshold": 0.8,
+      "n_at_least_80_percent": 0,
+      "n_correct_at_least_80_percent": 0,
+      "accuracy_at_least_80_percent": null,
+      "max_confidence": 0.5869072079658508,
+      "mean_when_right": 0.5303934216499329,
+      "mean_when_wrong": 0.5144124031066895,
+      "accuracy_most_confident_third": 0.9090909090909091,
+      "accuracy_least_confident_third": 0.6363636363636364,
+      "n_per_third": 11
+    }
+  },
+  {
+    "phase": "before",
+    "seed": 7,
+    "max_length": 128,
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "matches_original_discrete_metrics": true,
+    "accuracy": 0.7714285714285715,
+    "confidence": {
+      "threshold": 0.8,
+      "n_at_least_80_percent": 0,
+      "n_correct_at_least_80_percent": 0,
+      "accuracy_at_least_80_percent": null,
+      "max_confidence": 0.6554830074310303,
+      "mean_when_right": 0.5441431999206543,
+      "mean_when_wrong": 0.5273443460464478,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.8181818181818182,
+      "n_per_third": 11
+    }
+  },
+  {
+    "phase": "before",
+    "seed": 2024,
+    "max_length": 128,
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "matches_original_discrete_metrics": true,
+    "accuracy": 0.6571428571428571,
+    "confidence": {
+      "threshold": 0.8,
+      "n_at_least_80_percent": 0,
+      "n_correct_at_least_80_percent": 0,
+      "accuracy_at_least_80_percent": null,
+      "max_confidence": 0.6183190941810608,
+      "mean_when_right": 0.5610862970352173,
+      "mean_when_wrong": 0.5491317510604858,
+      "accuracy_most_confident_third": 0.7272727272727273,
+      "accuracy_least_confident_third": 0.5454545454545454,
+      "n_per_third": 11
+    }
+  },
+  {
+    "phase": "after",
+    "seed": 42,
+    "max_length": 256,
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "matches_original_discrete_metrics": true,
+    "accuracy": 0.7428571428571429,
+    "confidence": {
+      "threshold": 0.8,
+      "n_at_least_80_percent": 0,
+      "n_correct_at_least_80_percent": 0,
+      "accuracy_at_least_80_percent": null,
+      "max_confidence": 0.6015903353691101,
+      "mean_when_right": 0.5338122248649597,
+      "mean_when_wrong": 0.5227109789848328,
+      "accuracy_most_confident_third": 0.8181818181818182,
+      "accuracy_least_confident_third": 0.6363636363636364,
+      "n_per_third": 11
+    }
+  },
+  {
+    "phase": "after",
+    "seed": 7,
+    "max_length": 256,
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "matches_original_discrete_metrics": true,
+    "accuracy": 0.6857142857142857,
+    "confidence": {
+      "threshold": 0.8,
+      "n_at_least_80_percent": 0,
+      "n_correct_at_least_80_percent": 0,
+      "accuracy_at_least_80_percent": null,
+      "max_confidence": 0.6300870180130005,
+      "mean_when_right": 0.5432987809181213,
+      "mean_when_wrong": 0.5220305919647217,
+      "accuracy_most_confident_third": 0.8181818181818182,
+      "accuracy_least_confident_third": 0.45454545454545453,
+      "n_per_third": 11
+    }
+  },
+  {
+    "phase": "after",
+    "seed": 2024,
+    "max_length": 256,
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "matches_original_discrete_metrics": true,
+    "accuracy": 0.7142857142857143,
+    "confidence": {
+      "threshold": 0.8,
+      "n_at_least_80_percent": 0,
+      "n_correct_at_least_80_percent": 0,
+      "accuracy_at_least_80_percent": null,
+      "max_confidence": 0.6457751989364624,
+      "mean_when_right": 0.5644540786743164,
+      "mean_when_wrong": 0.5690418481826782,
+      "accuracy_most_confident_third": 0.7272727272727273,
+      "accuracy_least_confident_third": 0.7272727272727273,
+      "n_per_third": 11
+    }
+  }
+]

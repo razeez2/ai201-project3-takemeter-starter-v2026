@@ -137,9 +137,9 @@ These analyses were drafted during the initial run. I later reviewed the corresp
 >
 > *Could have been:* `emotional_support` or `practical_advice`.
 >
-> *Current AI label and reasoning:* `practical_advice`. The author expresses anxiety but also describes difficulty using floss and explicitly asks for advice. The concrete request takes priority under the decision rule.
+> *Initial AI label and reasoning:* `practical_advice`. The author expresses anxiety but also describes difficulty using floss and explicitly asks for advice. The concrete request takes priority under the decision rule.
 >
-> *My review:* Pending.
+> *My review:* I subsequently chose `emotional_support` when resubmitting this post. This differs from the initial AI suggestion and may conflict with my concrete-request priority rule; that is a remaining taxonomy-consistency limitation, not a claim that the initial reasoning was accepted.
 
 **2. Anxiety about brushing, without a specific request for a technique**
 
@@ -147,9 +147,9 @@ These analyses were drafted during the initial run. I later reviewed the corresp
 >
 > *Could have been:* `emotional_support` or `practical_advice`.
 >
-> *Current AI label and reasoning:* `emotional_support`. The main request appears to be reassurance about worry rather than a concrete change to the routine. Review whether “How worried should I be?” should instead count as a request for factual risk information, and clarify the rule consistently.
+> *Initial AI label and reasoning:* `emotional_support`. The main request appears to be reassurance about worry rather than a concrete change to the routine. Review whether “How worried should I be?” should instead count as a request for factual risk information, and clarify the rule consistently.
 >
-> *My review:* Pending.
+> *My review:* I confirmed `emotional_support` in the individual review.
 
 **3. Burnout with a practical question at the end**
 
@@ -157,9 +157,9 @@ These analyses were drafted during the initial run. I later reviewed the corresp
 >
 > *Could have been:* `emotional_support` or `practical_advice`.
 >
-> *Current AI label and reasoning:* `practical_advice`. Most of the post vents, but the final question can be read as asking for concrete strategies to manage work, exercise, and meals. Review whether it is a literal request or a rhetorical expression of exhaustion.
+> *Initial AI label and reasoning:* `practical_advice`. Most of the post vents, but the final question can be read as asking for concrete strategies to manage work, exercise, and meals. Review whether it is a literal request or a rhetorical expression of exhaustion.
 >
-> *My review:* Pending.
+> *My review:* I subsequently chose `emotional_support` when resubmitting this post. Whether the final question is rhetorical remains a boundary limitation; I retained my chosen label for the controlled experiment.
 
 ---
 
@@ -210,7 +210,7 @@ Each label has only 8 test examples, so scores may change substantially across s
 - *What came back:* A CSV with my early label choices entered and later AI label suggestions explicitly marked for review. AI also drafted three boundary analyses above.
 - *What I changed:* I standardized the label names to `emotional_support` and `practical_advice`. The 31 remaining AI-suggested labels were subsequently reviewed individually, followed by the eight flagged cases.
 
-**Pre-labelling disclosure:** AI formatted copied posts and supplied some initial label suggestions. I subsequently reviewed all 31 rows still marked as awaiting AI-label review, plus eight flagged cases, in conversation. Two missing-context posts were excluded. Earlier batches were labeled by me and formatted by AI. AI helped explain the staff taxonomy and drafted adjudication text from my decisions; my original staff answers are preserved unchanged. AI also prepared the run logs and identified input truncation as a hypothesis to test. Verification against original source posts remains a limitation for reconstructed or incomplete excerpts.
+**Pre-labelling disclosure:** AI formatted copied posts and supplied some initial label suggestions. I subsequently reviewed all 31 rows still marked as awaiting AI-label review, plus eight flagged cases, in conversation. Two missing-context posts were excluded. Earlier batches were labeled by me and formatted by AI. AI helped explain the staff taxonomy and drafted adjudication text from my decisions; my original staff answers are preserved unchanged. AI also prepared the run logs, identified input truncation as a hypothesis to test, ran the controlled experiment, and reproduced the trials to measure the confidence threshold. I chose the retrospective clarification of criterion 3; AI computed the retrospective human–AI audit from Git history and my saved reviews. Verification against original source posts remains a limitation for reconstructed or incomplete excerpts.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
@@ -248,15 +248,15 @@ Both models were evaluated on the same 35 held-out posts for seed 42. The baseli
 |---|---|---|---|---|---|
 | 1. Overall accuracy | ≥ 0.70 | 0.686 | 0.771 | 0.657 | MISSED |
 | 2. Per-label precision | practical_advice ≥ 0.80; emotional_support ≥ 0.60 | PA: 0.652; ES: 0.750 | PA: 0.708; ES: 0.909 | PA: 0.667; ES: 0.647 | MISSED — practical_advice below target in all three seeds |
-| 3. Dataset balance | About 120 practical_advice posts out of 200 | 120/228 (52.6%) | 120/228 (52.6%) | 120/228 (52.6%) | NEEDS CLARIFICATION — original denominator was 200 and “about” has no tolerance |
-| 4. Human–AI label agreement | ≥ 9/10 posts agree | Not measured on a specified 10-post set | Not measured on a specified 10-post set | Not measured on a specified 10-post set | NOT YET EVALUATED |
-| 5. Accuracy when confidence ≥ 0.80 | ≥ 0.85 | Not recorded at this threshold | Not recorded at this threshold | Not recorded at this threshold | NOT YET EVALUATED |
+| 3. Dataset balance | 60% practical_advice (clarified retrospectively) | 52.6% | 52.6% | 52.6% | MISSED |
+| 4. Human–AI label agreement | ≥ 9/10 posts agree | 10/10 | 10/10 (same audit) | 10/10 (same audit) | MET on retrospective audit |
+| 5. Accuracy when confidence ≥ 0.80 | ≥ 0.85 | N/A (0 qualify) | N/A (0 qualify) | N/A (0 qualify) | MISSED — pass not demonstrated |
 
 Source: `results_three_seeds_before.json`, using the reviewed 228-post dataset. Each seed has 35 test posts (17 emotional_support and 18 practical_advice). All runs used Apple Silicon GPU (MPS), PyTorch 2.14.1, and a maximum input length of 128 tokens.
 
 Accuracy ranged from 65.7% to 77.1%, a spread of 11.4 percentage points. This exceeds the assignment’s 10-point stability guideline, so conclusions from a single split are uncertain. Accuracy missed its target in seeds 42 and 2024. Emotional-support precision met its target in all three seeds, but practical-advice precision did not.
 
-Criteria 3 and 4 concern the dataset or labelers rather than model randomness, so they are not independent measurements across seeds. The staff agreement exercise uses a separate taxonomy and does not directly measure criterion 4’s human–AI agreement. Criterion 5 requires accuracy and sample counts specifically for predictions with confidence ≥ 0.80; the saved most-confident-third scores do not test that threshold. Original criteria remain unchanged in `criteria.md`.
+Criteria 3 and 4 concern the dataset or labelers rather than model randomness, so they are not independent measurements across seeds. The user clarified criterion 3 as a 60% share after seeing the counts; this is disclosed rather than presented as a pre-registered threshold. Criterion 4 uses the first ten original AI-pre-labeled rows that match posts subsequently reviewed individually by the user. All ten match (human_ai_agreement.json). This is a retrospective consistency audit, not a new blind sample; repeating it in the seed columns does not create three independent trials. The staff agreement exercise uses a separate taxonomy and does not directly measure criterion 4’s human–AI agreement. Criterion 5 was measured afterward by reproducing all six trials with added confidence instrumentation; the accuracy, per-label metrics, and confusion matrices exactly matched the saved originals. No predictions reached 0.80 confidence, so threshold accuracy is undefined and the target cannot be demonstrated. “MISSED” here means insufficient qualifying evidence to establish a pass, not measured accuracy below 85%. See `confidence_threshold_results.json`; the original experiment result files were preserved. Original criteria remain unchanged in `criteria.md`.
 
 ### Confusion matrix
 
@@ -290,9 +290,9 @@ Eight emotional-support posts were predicted as practical advice, compared with 
 |---|---|---|---|---|
 | 1 | Accuracy | ≥ 0.70 | MISSED | Seeds 42 and 2024 scored 0.686 and 0.657; all seeds must pass. |
 | 2 | Precision | PA ≥ 0.80; ES ≥ 0.60 | MISSED | PA precision was 0.652, 0.708, and 0.667. ES passed in all three. |
-| 3 | Dataset balance | About 120 PA out of 200 | NEEDS CLARIFICATION | Current count is 120/228; the original “about” tolerance and fixed denominator do not clearly define a verdict for the expanded dataset. |
-| 4 | Human–AI agreement | ≥ 9/10 | NOT YET EVALUATED | No specified independent ten-post comparison was recorded. Staff agreement is 24/30 under a different taxonomy and is not this measure. |
-| 5 | Accuracy at confidence ≥ 0.80 | ≥ 0.85 | NOT YET EVALUATED BEFORE | The before-results store confidence thirds, not accuracy and counts at the specified threshold. |
+| 3 | Dataset balance | 60% PA, clarified retrospectively | MISSED | User chose the proportional interpretation; 120/228 = 52.6%, below 60%. Original wording and clarification remain in criteria.md. |
+| 4 | Human–AI agreement | ≥ 9/10 | MET on retrospective audit | Ten original AI suggestions matched the user’s later individual reviews; see human_ai_agreement.json. Selection was retrospective, not a new independent trial. |
+| 5 | Accuracy at confidence ≥ 0.80 | ≥ 0.85 | MISSED — pass not demonstrated | Reproduced all six trials; none produced a prediction with confidence ≥ 0.80. Conditional accuracy is undefined, not 0%. |
 
 **Diagnoses**
 
@@ -300,9 +300,11 @@ For accuracy and practical-advice precision, the seed-42 matrix shows eight emot
 
 The staff exercise found four disagreements I accepted as rule-application or comprehension mistakes and two I continue to defend. This shows I can over-weight personal experience and confuse an argument’s quality with the presence of supporting evidence. It suggests possible labeling inconsistency, but the staff’s running-post taxonomy differs from my own, so it does not prove which dental-hygiene rows are wrong.
 
-Input truncation is another plausible cause: the before-model reads only 128 tokens, while posts can place their request or main point near the end. I will test a longer input window as one change. This is a hypothesis rather than a demonstrated explanation of every error. The dataset is fairly balanced (108/120), so severe class imbalance is not supported by the counts.
+Input truncation was another plausible cause: the before-model reads only 128 tokens, while posts can place their request or main point near the end. I tested a longer input window as one change. This is a hypothesis rather than a demonstrated explanation of every error. The dataset is fairly balanced (108/120), so severe class imbalance is not supported by the counts.
 
-Criteria 3–5 also expose measurement limitations. I will not lower thresholds or substitute staff agreement for human–AI agreement. Any clarification must be appended to the original criterion with a reason; the originals remain unchanged.
+For criterion 5, maximum confidence ranged from 0.587 to 0.655 before and 0.602 to 0.646 after. The 80% threshold selected zero posts in every trial, so there is no conditional accuracy estimate. This diagnoses a coverage/measurement problem at the chosen threshold rather than showing that high-confidence predictions are wrong. I did not lower the threshold after seeing this result.
+
+Dataset balance misses the retrospectively clarified 60% target because the expanded collection contains 120 practical-advice and 108 emotional-support posts. The collection is fairly balanced for classification, but that is distinct from meeting my numerical target. Criterion 4 meets 9/10 in the retrospective ten-post audit, with the limitations disclosed above. Neither the staff agreement rate nor repeated seed columns should be mistaken for independent human–AI trials.
 
 ---
 
@@ -410,9 +412,9 @@ Five of my six disagreements were posts staff called analysis; I initially calle
 |---|---|---|---|---|---|
 | 1. Accuracy | ≥ 0.70 | 0.743 | 0.686 | 0.714 | MISSED |
 | 2. Precision | PA ≥ 0.80; ES ≥ 0.60 | PA: 0.765; ES: 0.722 | PA: 0.684; ES: 0.688 | PA: 0.682; ES: 0.769 | MISSED |
-| 3. Dataset balance | About 120 PA out of 200 | 120/228 (52.6%) | 120/228 (52.6%) | 120/228 (52.6%) | NEEDS CLARIFICATION |
-| 4. Human–AI agreement | ≥ 9/10 | Not measured | Not measured | Not measured | NOT YET EVALUATED |
-| 5. Accuracy at confidence ≥ 0.80 | ≥ 0.85 | Threshold data absent | Threshold data absent | Threshold data absent | NOT YET EVALUATED |
+| 3. Dataset balance | 60% PA, clarified retrospectively | 52.6% | 52.6% | 52.6% | MISSED |
+| 4. Human–AI agreement | ≥ 9/10 | 10/10 | 10/10 (same audit) | 10/10 (same audit) | MET on retrospective audit |
+| 5. Accuracy at confidence ≥ 0.80 | ≥ 0.85 | N/A (0 qualify) | N/A (0 qualify) | N/A (0 qualify) | MISSED — pass not demonstrated |
 
 All after-runs used Apple Silicon GPU (MPS), PyTorch 2.14.1, and 256 tokens. Each seed uses the same split as its before-run.
 
@@ -428,13 +430,30 @@ After-run accuracy spread was 5.7 percentage points. Longer inputs also increase
 
 ---
 
+### Confidence threshold measurement
+
+These are reproduced runs using the same dataset, settings, seeds, and Apple GPU. All six reproduce the original accuracy, per-label metrics, and confusion matrices. `measure_confidence.py` adds measurement only; it does not change training, labels, or predictions.
+
+| Phase | Seed | Maximum confidence | Predictions ≥ 0.80 | Accuracy on qualifying predictions |
+|---|---:|---:|---:|---|
+| before | 42 | 0.587 | 0 | N/A — empty group |
+| before | 7 | 0.655 | 0 | N/A — empty group |
+| before | 2024 | 0.618 | 0 | N/A — empty group |
+| after | 42 | 0.602 | 0 | N/A — empty group |
+| after | 7 | 0.630 | 0 | N/A — empty group |
+| after | 2024 | 0.646 | 0 | N/A — empty group |
+
+Source: `confidence_threshold_results.json`. Reproduce with `.venv/bin/python measure_confidence.py`. This needs the model cache or Hugging Face access; each trial runs in a fresh process to release GPU memory.
+
+---
+
 ## What's Still Broken
 
 Accuracy still misses the 70% target across seeds. I would next audit misclassified posts against the concrete-request rule and collect more examples of ambiguous emotional-support posts, but did not make those additional changes because this experiment measures one improvement only.
 
 The per-label precision target also remains missed. I would examine emotional-support posts predicted as practical advice before trying more training settings. The staff exercise suggests some rule-application difficulty, but cannot identify errors in this different taxonomy by itself.
 
-Criteria 3–5 are not fully resolved: criterion 3 needs a transparent clarification of its denominator/tolerance; criterion 4 needs a specified human–AI comparison rather than substituting staff agreement; criterion 5 needs per-prediction confidence or threshold-specific counts. The stored confidence-third summaries cannot establish accuracy above 80% confidence. I retained these limitations instead of inventing measurements or weakening targets. This leaves the five-criterion evaluation incomplete even though both model experiments and the staff agreement exercise are finished.
+Criterion 3 was clarified retrospectively as 60% practical advice and misses that target; future collection could target that share, but changing the data again would add another intervention. Criterion 4 passes a retrospective audit only; a future prospective blind sample would provide stronger evidence. Criterion 5 was measured but has zero qualifying predictions in all six trials. A future evaluation should state a minimum qualifying sample count and collect enough held-out examples to assess confidence; I retained the original 80%/85% thresholds for this submission. All five criteria now have a documented verdict, including the evidence limitation behind criterion 5’s non-pass.
 
 **The gap between what I meant my labels to capture and what the model learned:**
 

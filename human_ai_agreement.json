@@ -1,0 +1,69 @@
+{
+  "selection": "First ten rows in original CSV order with AI pre-labels and matching text subsequently reviewed individually by user; selected retrospectively, not a preregistered or new blind sample.",
+  "ai_source_commit": "1197ca9",
+  "n": 10,
+  "agreed": 10,
+  "rate": 1.0,
+  "posts": [
+    {
+      "text": "Does anyone have suggestion for a Dental office that works with sensitive patients for a cleaning? Thank you-",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "I have a very bad habit of passing out at night and then brushing my teeth in the morning.How worried should I be? I dont have gingivitis thankfully no gum bleeding. I am a lot better than I was but I still do these stupid things. Thanks for letting me ask and vent.",
+      "ai_label": "emotional_support",
+      "human_label": "emotional_support",
+      "agreed": true
+    },
+    {
+      "text": "Teeth and gums feel like I ate bananas constantly? Could this be plaque buildup?",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "Hi all, I\u2019m posting looking for advice on how to treat the pain I\u2019m experiencing after getting my teeth professionally whitened. Hygienist did the \u201cZoom\u201d whitening treatment. I got two fluoride varnishes because I started having random horrid shooting tooth pain in individual teeth and the first varnish did nothing; the second one helped for a few hours. Now I\u2019m just having nonstop throbbing pain in the lower teeth that have a permanent retainer attached. Tylenol didn\u2019t help and because of my sensitive stomach I can\u2019t take any NSAIDs. sensodyne isnt helping, orajel 4x worked for about five minutes, now I\u2019m just in constant pain. If there\u2019s nothing I can do then how long will this last?? I appreciate any and all advice",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "i feel so defeated and upset because despite these efforts, my teeth are full of cavities.\\\ni do have a history of childhood dental and medical neglect which definitely did not set me up for success, but can that even still affect things so severely now when i'm doing everything i can and am supposed to???\\\nidk if i need advice or more therapy atp lmao",
+      "ai_label": "emotional_support",
+      "human_label": "emotional_support",
+      "agreed": true
+    },
+    {
+      "text": "Hi everyone! I\u2019m planning to apply to GSU\u2019s Dental Hygiene Program for Fall 2027. Based on the admission scoring sheet, my estimated score is around 28\u201329 out of 32.5.\\\nMost of my prerequisite grades are A\u2019s, but I might end up with one C in Microbiology Lab. I\u2019m honestly feeling really stressed and discouraged because I\u2019ve heard that even one C can make it difficult to get accepted into a competitive program.\\\nHas anyone been accepted with a score around 28\u201329 or with a C in one of their science labs? I\u2019m also wondering if anyone has experience with the alternate list.\\\nI\u2019m feeling pretty overwhelmed right now and would really appreciate any honest advice or personal experiences. Thank you!",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "I have never had a tongue scraper, and I\u2019m at the point where I definitely need one. I\u2019ve tried to use my tooth brush to clean my tongue a few times but when I do, I gag a lot. Any suggestions?",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "People who have drank alcohol a week+ post-graft, did you suffer any serious adverse consequences?",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "Has anyone seen erosion like this where the acid source isn't identifiable? Can this be from my tongue/mouth? My orthodontist says the erosion is mild, but its all happened in a few months and i keep noticing pretty rapid loss of my bite surface and front teeth thickness. My PCP, ENT, and GI don\u2019t know what\u2019s causing it. I\u2019m using xylimelts to hold it off but i cant seem to stop it.",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    },
+    {
+      "text": "I am an autistic adult who struggles with teeth care a lot.I have a special softer brush, so I have options on bad days, but I hate mint, its hard to explain, but it hurts?\n\nIve tried a few kids toothpastes, I dont really know the diffrence aside from the branding and cartoon characters.\n\nAnd the gross fruit tastes, so im looking for bubble gum, it's already a chemical'ly flavor\\\nSo any advice, products etc would be helpful.\n\nAnd in case it matters, I am in Canada",
+      "ai_label": "practical_advice",
+      "human_label": "practical_advice",
+      "agreed": true
+    }
+  ]
+}

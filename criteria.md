@@ -81,6 +81,10 @@ There is simply more posts on practical help which means they is a higher likeli
 
 of 200 posts, about 120 are labelled "practical_advice".
 
+> **Clarified in unit 6:** Evaluate the intended 60% practical_advice share when the dataset size changes. The current 120/228 = 52.6% misses that target.
+>
+> **Why clarified:** The original used a fixed 200-post denominator and did not define “about.” I chose the proportional interpretation during review after seeing the results; this clarification is retrospective, and the original wording remains above.
+
 **Why this target:**
 
 
@@ -92,6 +96,8 @@ more posts
 <!-- Your criterion. -->
 
 out of 10 posts, me and AI agree on 9/10 of them
+
+> **Measurement in unit 6:** On a retrospective sample of the first ten matching, individually reviewed AI-pre-labeled rows in original CSV order, my review agreed with the original AI suggestions on 10/10. The AI labels were recovered from Git commit `1197ca9`; the saved human reviews came from our one-at-a-time review. This was not a prespecified sample or a new independent labeling trial, and is weaker evidence than a prospective blind comparison. The original ≥9/10 target is unchanged.
 
 **Why this target:**
 
@@ -105,6 +111,8 @@ labels should be consistent
 
 <!-- Your criterion. -->
 For held-out dental hygiene posts where the model is at least 80% confident in predicting emotional_support or practical_advice, at least 85% of those predictions must be correct.
+
+> **Evaluation note in unit 6:** Reproducing all six runs found zero predictions at or above 80% confidence. The qualifying accuracy is undefined, so this criterion cannot demonstrate a pass. The run logs mark it “MISSED — pass not demonstrated,” not 0% accuracy; neither numerical threshold was changed. A future criterion should also specify the minimum qualifying sample count.
 
 
 **Why this target:**
