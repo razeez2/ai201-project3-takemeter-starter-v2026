@@ -252,24 +252,33 @@ Each label has only 8 test examples, so scores may change substantially across s
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.70 | 0.686 | 0.771 | 0.657 | MISSED |
+| 2. Per-label precision | practical_advice ≥ 0.80; emotional_support ≥ 0.60 | PA: 0.652; ES: 0.750 | PA: 0.708; ES: 0.909 | PA: 0.667; ES: 0.647 | MISSED — practical_advice below target in all three seeds |
+| 3. Dataset balance | About 120 practical_advice posts out of 200 | 120/228 (52.6%) | 120/228 (52.6%) | 120/228 (52.6%) | NEEDS CLARIFICATION — original denominator was 200 and “about” has no tolerance |
+| 4. Human–AI label agreement | ≥ 9/10 posts agree | Not measured on a specified 10-post set | Not measured on a specified 10-post set | Not measured on a specified 10-post set | NOT YET EVALUATED |
+| 5. Accuracy when confidence ≥ 0.80 | ≥ 0.85 | Not recorded at this threshold | Not recorded at this threshold | Not recorded at this threshold | NOT YET EVALUATED |
+
+Source: `results_three_seeds_before.json`, using the reviewed 228-post dataset. Each seed has 35 test posts (17 emotional_support and 18 practical_advice). All runs used Apple Silicon GPU (MPS), PyTorch 2.14.1, and a maximum input length of 128 tokens.
+
+Accuracy ranged from 65.7% to 77.1%, a spread of 11.4 percentage points. This exceeds the assignment’s 10-point stability guideline, so conclusions from a single split are uncertain. Accuracy missed its target in seeds 42 and 2024. Emotional-support precision met its target in all three seeds, but practical-advice precision did not.
+
+Criteria 3 and 4 concern the dataset or labelers rather than model randomness, so they are not independent measurements across seeds. The staff agreement exercise uses a separate taxonomy and does not directly measure criterion 4’s human–AI agreement. Criterion 5 requires accuracy and sample counts specifically for predictions with confidence ≥ 0.80; the saved most-confident-third scores do not test that threshold. Original criteria remain unchanged in `criteria.md`.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+Seed 42, matching the notebook’s section 7 selection:
+
+| true \ predicted | emotional_support | practical_advice |
+|---|---|---|
+| **emotional_support** | 9 | 8 |
+| **practical_advice** | 3 | 15 |
 
 **My biggest off-diagonal number, and what it means:**
+
+Eight emotional-support posts were predicted as practical advice, compared with three practical-advice posts predicted as emotional support. In this split, the model leans toward practical advice on this boundary.
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
