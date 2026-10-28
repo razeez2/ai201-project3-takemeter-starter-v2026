@@ -39,7 +39,7 @@
 
 ## What This Does
 
-TakeMeter classifies text posts from the public r/DentalHygiene community as `emotional_support` or `practical_advice`. Emotional-support posts express distress or seek reassurance, validation, or solidarity, while practical-advice posts request concrete information, recommendations, or actions. When a post does both, the decision rule prioritizes a concrete request for help over its emotional tone. This initial version was trained on 104 collected posts; its small dataset and pending human review of AI labels limit how much the results can establish.
+TakeMeter classifies text posts from the public r/DentalHygiene community as `emotional_support` or `practical_advice`. Emotional-support posts express distress or seek reassurance, validation, or solidarity, while practical-advice posts request concrete information, recommendations, or actions. When a post does both, the decision rule prioritizes a concrete request for help over its emotional tone. The current version uses 228 reviewed posts. Its small held-out sets and subjective label boundary limit how much the results can establish.
 
 ### Candidate distinctions
 
@@ -117,23 +117,19 @@ I’m only at 32 hours average, and it’s been mentally hard to do 40 (burn out
 
 **Where the posts came from:** Public posts from [r/DentalHygiene](https://www.reddit.com/r/DentalHygiene/), manually copied into chat and formatted into `labels.csv`. The dataset is one unsplit file; the notebook will make the training/validation/test split.
 
-**Collection limit:** I stopped collecting because I was running out of time. I currently have 104 posts, below both the normal 200-post requirement and the 150-post stop-rule minimum. This is an incomplete collection milestone, not fulfillment of the stop rule. A smaller dataset will also make held-out scores less stable.
-
-**How I labelled them:** I supplied the early labels myself, and AI entered them and formatted the CSV. There are 61 rows recorded as `cold`; this records my own label choices, but I still need to verify that at least 20 were assigned independently before any AI labeling help. Later, I asked AI to pre-label posts using my definitions. The remaining 43 rows are marked `AI pre-labeled; needs human review`. I have not yet recorded completion of that review. Two rows have rejoined passages that also need checking against the original posts.
-
-**Counts per label:**
+**Collection and review:** The initial run used 104 posts. Before the unit 6 evaluation, collection expanded to 230 unique posts. I reviewed the 31 rows still marked as AI-pre-labeled one at a time, and reviewed eight separately flagged cases. Two posts were excluded for missing context and preserved in `excluded_posts.csv`, leaving 228 posts. Some retained posts still lack referenced titles or images; those limitations are recorded in their notes. Earlier user-supplied labels and later corrections are distinguished from AI suggestions in the CSV.
 
 | Label | Count | Share |
 |---|---:|---:|
-| `emotional_support` | 54 | 51.9% |
-| `practical_advice` | 50 | 48.1% |
-| **Total** | **104** | **100%** |
+| `emotional_support` | 108 | 47.4% |
+| `practical_advice` | 120 | 52.6% |
+| **Total** | **228** | **100%** |
 
-Neither label exceeds 70%. Exact duplicate text, empty text, blank labels, label spelling, and CSV structure were checked. One near duplicate differing only in its first letter was removed, keeping the user-labeled version. Complete source text still needs verification for uncertain excerpts; `incomplete_posts.txt` holds excluded fragments and a possible alternate version.
+The expanded dataset and review were completed before the three-seed “before” experiment. They are separate from the single measured unit 6 improvement. The original 104-post results remain in Git history. No label exceeds 70%.
 
-**Three hard cases — AI-drafted for my review**
+**Three hard cases — initial AI-drafted boundary analyses**
 
-These are proposed boundary analyses, not claims that I have independently reviewed or accepted the reasoning.
+These analyses were drafted during the initial run. I later reviewed the corresponding labels in conversation: the flossing-anxiety post and burnout post were labeled emotional_support when resubmitted, and the brushing-worry post was confirmed emotional_support. The initial suggested reasoning is retained below as history, not as the final label decisions.
 
 **1. Distress plus a specific request for help flossing**
 
@@ -168,6 +164,8 @@ These are proposed boundary analyses, not claims that I have independently revie
 ---
 
 ## The Training Run
+
+The details below describe the original 104-post unit 5 run. The expanded 228-post unit 6 experiment is recorded in the run logs below.
 
 **Base model:** `distilbert-base-uncased`.
 
@@ -210,9 +208,9 @@ Each label has only 8 test examples, so scores may change substantially across s
 
 - *What I asked for:* CSV formatting for copied Reddit posts, followed by pre-labeling later batches.
 - *What came back:* A CSV with my early label choices entered and later AI label suggestions explicitly marked for review. AI also drafted three boundary analyses above.
-- *What I changed:* I standardized the label names to `emotional_support` and `practical_advice`. Review and correction of all AI suggestions is still pending.
+- *What I changed:* I standardized the label names to `emotional_support` and `practical_advice`. The 31 remaining AI-suggested labels were subsequently reviewed individually, followed by the eight flagged cases.
 
-**Pre-labelling disclosure:** AI helped format and separate pasted posts, entered labels I supplied, and pre-labeled later posts. There are currently 43 AI-pre-labeled rows awaiting human review. AI also rejoined two interleaved posts; those reconstructions require verification against the originals. I have not claimed these rows are reviewed or that the three AI-drafted hard-case analyses are my final judgments.
+**Pre-labelling disclosure:** AI formatted copied posts and supplied some initial label suggestions. I subsequently reviewed all 31 rows still marked as awaiting AI-label review, plus eight flagged cases, in conversation. Two missing-context posts were excluded. Earlier batches were labeled by me and formatted by AI. AI helped explain the staff taxonomy and drafted adjudication text from my decisions; my original staff answers are preserved unchanged. AI also prepared the run logs and identified input truncation as a hypothesis to test. Verification against original source posts remains a limitation for reconstructed or incomplete excerpts.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
@@ -227,21 +225,17 @@ Each label has only 8 test examples, so scores may change substantially across s
      prints this table for you. -->
 
 | Measure | Baseline | Trained | Difference |
-|---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+|---|---:|---:|---:|
+| Overall accuracy | 0.657 | 0.686 | +0.029 |
+| Macro F1 | 0.643 | 0.676 | +0.033 |
+| F1 — `emotional_support` | 0.714 | 0.621 | -0.094 |
+| F1 — `practical_advice` | 0.571 | 0.732 | +0.160 |
 
-**What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+Both models were evaluated on the same 35 held-out posts for seed 42. The baseline used the written label definitions.
 
-**What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
+**What I predicted before I looked:** I did not record a prediction before viewing the comparison results.
 
-
+**What the gap actually means:** The trained model got one additional post correct (24 versus 23), with stronger practical-advice F1 but weaker emotional-support F1. This is a small observed advantage on one split, not evidence of a reliable overall improvement.
 
 ---
 
@@ -294,24 +288,21 @@ Eight emotional-support posts were predicted as practical advice, compared with 
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Accuracy | ≥ 0.70 | MISSED | Seeds 42 and 2024 scored 0.686 and 0.657; all seeds must pass. |
+| 2 | Precision | PA ≥ 0.80; ES ≥ 0.60 | MISSED | PA precision was 0.652, 0.708, and 0.667. ES passed in all three. |
+| 3 | Dataset balance | About 120 PA out of 200 | NEEDS CLARIFICATION | Current count is 120/228; the original “about” tolerance and fixed denominator do not clearly define a verdict for the expanded dataset. |
+| 4 | Human–AI agreement | ≥ 9/10 | NOT YET EVALUATED | No specified independent ten-post comparison was recorded. Staff agreement is 24/30 under a different taxonomy and is not this measure. |
+| 5 | Accuracy at confidence ≥ 0.80 | ≥ 0.85 | NOT YET EVALUATED BEFORE | The before-results store confidence thirds, not accuracy and counts at the specified threshold. |
 
 **Diagnoses**
 
-<!-- For each miss: the cause, and how you know. The four common causes are:
-     too few examples for a label, a boundary you applied inconsistently, a
-     genuinely hard label pair, and a task the model can't reach from this
-     much data.
+For accuracy and practical-advice precision, the seed-42 matrix shows eight emotional-support posts called practical advice versus three errors in the other direction. Across seeds, emotional-support recall stays between 0.529 and 0.647: the model misses a substantial share of that label. The 11.4-point accuracy spread and only 35 test posts per seed limit the stability of conclusions.
 
-     ⚠️ Use your agreement report as evidence. It is the only instrument you
-     have that can tell a LABELLING problem from a MODEL problem, and this
-     section is graded on whether you used it that way. -->
+The staff exercise found four disagreements I accepted as rule-application or comprehension mistakes and two I continue to defend. This shows I can over-weight personal experience and confuse an argument’s quality with the presence of supporting evidence. It suggests possible labeling inconsistency, but the staff’s running-post taxonomy differs from my own, so it does not prove which dental-hygiene rows are wrong.
 
+Input truncation is another plausible cause: the before-model reads only 128 tokens, while posts can place their request or main point near the end. I will test a longer input window as one change. This is a hypothesis rather than a demonstrated explanation of every error. The dataset is fairly balanced (108/120), so severe class imbalance is not supported by the counts.
 
+Criteria 3–5 also expose measurement limitations. I will not lower thresholds or substitute staff agreement for human–AI agreement. Any clarification must be appended to the original criterion with a reason; the originals remain unchanged.
 
 ---
 
@@ -323,7 +314,7 @@ Eight emotional-support posts were predicted as practical advice, compared with 
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 24 / 30 = 80%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -346,24 +337,62 @@ Eight emotional-support posts were predicted as practical advice, compared with 
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+> *The post:* The club championship scoring changed in 2019 from top-6 to top-10. Since then our B team has finished above the A team twice. That's not depth improving, it's the scoring rewarding turnout.
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`.
 >
-> *My call, and why:*
+> *My call, and why:* I keep `hot_take`. I do not think the scoring change supports the conclusion; I read the B-team wins as evidence pointing toward improved depth instead. Under rule 1, I do not regard these facts as carrying the stated argument. The counterargument discussed during review is that facts can carry an argument even if its inference is weak; staff’s `analysis` label does not require the conclusion to be proved.
 >
-> *Which pile:*
+> *Which pile:* (c) I regard the rule as ambiguous here and defend my interpretation of the facts as decoration rather than support.
 
 **2.**
-> *The post:*
+> *The post:* Everyone blames the hill at 18 miles. I split the field into people who ran the first half under 1:45 and over, and the slowdown after 18 was almost identical for both groups. If the hill were the problem the fast starters would fall apart harder.
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`.
 >
-> *My call, and why:*
+> *My call, and why:* I accept `analysis` because the writer makes a clear comparison between two groups. Their nearly identical slowdown is evidence used to challenge the explanation about the hill. Under rule 1, that comparison carries the argument rather than decorating an unsupported claim.
 >
-> *Which pile:*
+> *Which pile:* (a) The rule covered it, and I applied it loosely.
+
+**3.**
+> *The post:* Carbon plates aren't the whole story. My times dropped 2% in the shoes and another 2% the following year in the same pair, when the only thing that changed was going from 35 to 50 miles a week.
+>
+> *Staff said / I said:* `analysis` / `hot_take`.
+>
+> *My call, and why:* After discussing what the sentence meant with AI, I accept `analysis`. The writer reports a further 2% improvement while using the same shoes but increasing weekly mileage from 35 to 50 miles. That comparison supports the argument that shoes do not explain all the improvement, so the facts carry the argument under rule 1. My original choice reflected difficulty understanding the post.
+>
+> *Which pile:* (a) The rule covered it; I initially misread the post rather than identifying a gap in the definitions.
+
+**4.**
+> *The post:* Ran the same loop in 4C and in 24C within a fortnight, same effort by heart rate. 90 seconds slower in the heat over six miles. People keep saying heat costs you 'a bit' and it's more than that.
+>
+> *Staff said / I said:* `analysis` / `reaction`.
+>
+> *My call, and why:* I initially chose `reaction` because it describes a personal experience. After discussing rule 3 with AI, I accept `analysis`: the comparison of the same route at similar effort in two temperatures, with a 90-second slowdown, supports the argument about heat. Being a personal experience does not override evidence that carries the argument.
+>
+> *Which pile:* (a) The rule covered it, and I initially gave too much weight to the personal experience.
+
+**5.**
+> *The post:* Three of us ran the same session on the same day, different shoes, within 10 seconds of each other over 5 miles. I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people.
+>
+> *Staff said / I said:* `analysis` / `reaction`.
+>
+> *My call, and why:* On review, I choose `hot_take`, changing my original `reaction` label. My initial reason for `reaction` was that this describes a recent experience. We discussed rule 3, which says recency does not override evidence. I think the numbers decorate the claim rather than carry its argument, so I choose `hot_take` under rule 1. Staff’s alternative reading is that the same-session comparison and 10-second gap support the conclusion about the shoes’ effect.
+>
+> *Which pile:* (c) I regard the rule as ambiguous here and defend my interpretation of the facts as decoration rather than support.
+
+**6.**
+> *The post:* Every injury thread on this forum is the same injury and the same three replies.
+>
+> *Staff said / I said:* `hot_take` / `reaction`.
+>
+> *My call, and why:* I accept `hot_take` because the post does not describe a recent event. Under rule 2, it makes a general, unsupported claim about forum threads rather than reporting what just happened to the writer and how it felt.
+>
+> *Which pile:* (a) The rule covered it, and I initially applied the reaction label too broadly.
 
 **What the pattern in my disagreements tells me:**
+
+Five of my six disagreements were posts staff called analysis; I initially called three hot_take and two reaction. I accepted four staff labels on review and defended two interpretations, showing that recognizing evidence and distinguishing it from personal experience were the main difficulties. This is evidence about my application of these staff rules, not a direct audit of my dental-hygiene labels.
 
 
 
@@ -371,40 +400,45 @@ Eight emotional-support posts were predicted as practical advice, compared with 
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** Increased the maximum input length from 128 to 256 tokens for the after-runs. After-runs were executed from the notebook’s functions by a local Python runner, one fresh process per seed to release model memory; their metrics were combined into `results_three_seeds_after.json`. The 228-post dataset, labels, model, three epochs, learning rate 2e-5, batch size 16, and seeds 42, 7, and 2024 remain the same.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** Long posts may lose their final requests or context at 128 tokens. A tokenizer audit found 102/228 posts exceed 128 tokens, compared with 37/228 exceeding 256 tokens. Reading more text tests that truncation hypothesis without changing the taxonomy or labels. The result will show whether this change helps; it cannot establish truncation as the sole cause.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Accuracy | ≥ 0.70 | 0.743 | 0.686 | 0.714 | MISSED |
+| 2. Precision | PA ≥ 0.80; ES ≥ 0.60 | PA: 0.765; ES: 0.722 | PA: 0.684; ES: 0.688 | PA: 0.682; ES: 0.769 | MISSED |
+| 3. Dataset balance | About 120 PA out of 200 | 120/228 (52.6%) | 120/228 (52.6%) | 120/228 (52.6%) | NEEDS CLARIFICATION |
+| 4. Human–AI agreement | ≥ 9/10 | Not measured | Not measured | Not measured | NOT YET EVALUATED |
+| 5. Accuracy at confidence ≥ 0.80 | ≥ 0.85 | Threshold data absent | Threshold data absent | Threshold data absent | NOT YET EVALUATED |
 
-**Did it help, and how do I know:**
+All after-runs used Apple Silicon GPU (MPS), PyTorch 2.14.1, and 256 tokens. Each seed uses the same split as its before-run.
 
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
+**Did it help, and how do I know:** The result is mixed. Mean accuracy rose from 70.5% to 71.4% across the three splits, but seed 7 worsened and the 70% accuracy target still failed across all three trials. Mean macro F1 rose from 0.698 to 0.712. This is a modest observed improvement, not proof of a reliable gain or of truncation as the sole cause.
 
+| Seed | Before accuracy | After accuracy | Change (percentage points) |
+|---|---:|---:|---:|
+| 42 | 68.6% | 74.3% | +5.7 |
+| 7 | 77.1% | 68.6% | -8.6 |
+| 2024 | 65.7% | 71.4% | +5.7 |
 
+After-run accuracy spread was 5.7 percentage points. Longer inputs also increased training work. I stopped after this single change to keep the experiment interpretable.
 
 ---
 
 ## What's Still Broken
 
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
+Accuracy still misses the 70% target across seeds. I would next audit misclassified posts against the concrete-request rule and collect more examples of ambiguous emotional-support posts, but did not make those additional changes because this experiment measures one improvement only.
 
+The per-label precision target also remains missed. I would examine emotional-support posts predicted as practical advice before trying more training settings. The staff exercise suggests some rule-application difficulty, but cannot identify errors in this different taxonomy by itself.
 
+Criteria 3–5 are not fully resolved: criterion 3 needs a transparent clarification of its denominator/tolerance; criterion 4 needs a specified human–AI comparison rather than substituting staff agreement; criterion 5 needs per-prediction confidence or threshold-specific counts. The stored confidence-third summaries cannot establish accuracy above 80% confidence. I retained these limitations instead of inventing measurements or weakening targets. This leaves the five-criterion evaluation incomplete even though both model experiments and the staff agreement exercise are finished.
 
-**The gap between what I meant my labels to capture and what the model
-learned:**
-<!-- Two sentences. Your confusion matrix is the evidence. -->
+**The gap between what I meant my labels to capture and what the model learned:**
 
-
+I intended the labels to distinguish a request for reassurance from a request for concrete information, even when both have an emotional tone. The before-run seed-42 matrix shows eight emotional-support posts called practical advice, so the learned boundary does not consistently match that intent; the matrix alone cannot establish what textual features caused those errors.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
